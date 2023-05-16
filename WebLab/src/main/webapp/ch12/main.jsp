@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,19 +12,20 @@
 	request.setAttribute("attr", "hello world");
 %>
 <%= request.getAttribute("attr") %><br/>
-${requestScope["attr"] }<br/>
-${requestScope.attr }<br/>
-${requestScope["attr2"] }<br/>
+${requestScope["attr"]}<br/>
+${requestScope.attr}<br/>
+${requestScope["attr2"]}<br/>
 <%
 	Map<String, String> map = new HashMap<>();
-	map.put("one","hello");
-	map.put("two","world");
+	map.put("one", "hello");
+	map.put("two", "world");
 	pageContext.setAttribute("map", map);
 %>
-<%-- ${map.get("one")" }, ${map["one"] }, ${map.one }
- --%>
+${map.get("one") }, ${map["one"] }, ${map.one }
+
 ${(10*10) ne 100 }<br/>
 ${3 div 4 }<br/>
+${empty param.Add }<br/>
 ${pageContext.request.contextPath }<br/>
 ${header["host"] }
 </body>

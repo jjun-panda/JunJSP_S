@@ -1,0 +1,441 @@
+@charset "utf-8";
+@import url('swiper.min.css');
+@import url('fonts.css');
+
+/**************************************************************************************************************
+	공통
+**************************************************************************************************************/
+.m0 { margin:0  !important }
+.mb0 { margin-bottom:0 !important }
+.mb2 { margin-bottom:2px !important }
+.mb4 { margin-bottom:4px !important }
+.mb5 { margin-bottom:5px !important }
+.mb6 { margin-bottom:6px !important }
+.mb10 { margin-bottom:10px !important }
+.mb15 { margin-bottom:15px !important }
+.mb20 { margin-bottom:20px !important }
+.mb25 { margin-bottom:25px !important }
+.mb30 { margin-bottom:30px !important }
+.mb35 { margin-bottom:35px !important }
+.mb40 { margin-bottom:40px !important }
+.mb45 { margin-bottom:45px !important }
+.mb50 { margin-bottom:50px !important }
+.mb55 { margin-bottom:55px !important }
+.mb60 { margin-bottom:60px !important }
+.mb70 { margin-bottom:70px !important }
+.mb80 { margin-bottom:80px !important }
+.mb90 { margin-bottom:90px !important }
+.ml20 { margin-left:20px !important }
+.text-center { text-align:center !important }
+.text-left { text-align:left !important }
+.text-right { text-align:right !important ;}
+
+
+/***********************************************************************************
+	Reset
+************************************************************************************/
+
+html,body,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,big,cite,code,del,dfn,em,font,img,ins,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,ul,ol,li,dl,dt,dd,table,caption,tbody,tfoot,thead,tr,th,td,fieldset,fo7m,label,legend,input,button,textarea,select{margin:0;padding:0}
+header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption{display:block;margin:0;padding:0}
+legend{display:block;overflow:hidden;position:absolute;width:1px;height:1px;font-size:1px;line-height:0;text-indent:-999em;white-space:nowrap; }
+fieldset,img,table,caption,tbody,tfoot,thead,tr,th,td,button,hr{border:0 none}
+ol,dl,ul,li{list-style:none; padding:0; margin:0;}
+table{border-collapse:collapse}
+caption{visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-height:0;}
+button{overflow:visible;border:0; outline:none; cursor:pointer; -webkit-appearance:none; background: none;}
+button::-moz-focus-inner,input[type="button"]::-moz-focus-inner,input[type="submit"]::-moz-focus-inner,input[type="reset"]::-moz-focus-inner {padding: 0;border: 0 none}
+a { text-decoration:none; color:#212121;  }
+address,
+em { font-style:normal }
+body,input,select,textarea,button,h1,h2,h3,h4,h5,h6 { font-family:'S-Core'; font-size:13px; color: #212121; outline:none; border-radius:0;}
+body,textarea,input,select { font-family:'S-Core'; font-size:13px; color: #212121; text-decoration: none; } 
+textarea,.inp,select { border:0; outline:none; border-radius:0; resize:none; box-shadow:none; -webkit-appearance:none; appearance:none; font-weight: normal;}
+a:hover { text-decoration: none;}
+body { -webkit-text-size-adjust: none; background:none; }
+form { padding: 0; margin: 0; }
+* {box-sizing: border-box; -webkit-box-sizing:border-box;}
+
+::-ms-clear { display: none;}
+select::-ms-expand { display:none; }
+a,a:active,a:visited { text-decoration:none !important; }
+p,div { word-break:keep-all; }
+img {
+    max-width: 100%;
+}
+
+
+::-webkit-input-placeholder { color: #909090;}
+:-ms-input-placeholder {  color: #909090;}
+
+
+/*******************************************************************************************************************************************************
+	Common
+********************************************************************************************************************************************************/
+.inner { max-width:1200px; margin:0 auto; padding:0 15px;}
+#header { height: 82px; }
+#header .inner { position: relative; width: 100%;}
+#header h1 { position: absolute; left: 15px; top:0; width:60px; height: 82px; background: url(http://oopblog.com/robot/img/common/logo.svg) no-repeat 0 50%; background-size:55px auto; text-indent: -9999px; }
+#header nav { margin-left: 100px; overflow: hidden; }
+#header nav a { float:left; font-size:16px; font-weight: 600; color: #000; padding:0 23px; height: 82px; line-height: 81px; }
+#header .right { position: absolute; right:15px; top:22px;  }
+#header .right > a { display: inline-block; vertical-align: middle; font-size:14px; color: #909090; padding:0 12px; position: relative; }
+#header .right > a + a:before { content: ''; position: absolute;left: -1px; width:1px; height: 14px; background: #dfe2e7; top:4px }
+#header .right button { font-size:14px; padding:0 18px; height: 37px; border-radius:5px; background: #000; color: #fff; margin-left: 20px; }
+#header .search-box { position: absolute; right:370px; top:22px; }
+#header .search-box .search { display: inline-block; vertical-align: middle; width:200px; margin-right:15px; }
+#header .search-box .search .inp-srch { width:100%; height: 37px; border: 1px solid #e1e1e1; border-radius:5px; padding-left: 30px; transition: all 0.5s ease; }
+#header .search-box .search .inp-srch:focus { border-color:#00c09f; }
+#header .search-box .search .btn-srch { position: absolute;left: 5px; top:0; width:25px; height: 37px; background: url(http://oopblog.com/robot/img/common/ico_srch.svg) no-repeat 50% 50%; text-indent: -9999px; }
+#header .search-box .btn-cart { vertical-align: middle; width:37px; height: 37px; border-radius:100%; background: #00c09f url(http://oopblog.com/robot/img/common/ico_cart.svg) no-repeat 50% 50%; text-indent: -9999px; }
+
+/* Swiper Controller */
+.control-common { position: relative; margin-bottom: 20px; }
+.control-common .swiper-button-next, 
+.control-common .swiper-button-prev { display: inline-block; vertical-align: middle; margin:0; position: static; width:24px; height: 24px; background: url(http://oopblog.com/robot/img/common/ico_slider_next.svg) no-repeat 0 0; }
+.control-common .swiper-button-prev { transform: scaleX(-1)}
+.control-common .swiper-pagination { display: inline-block; vertical-align: middle; font-size:14px; color: #000; font-weight: 600; position: static;width:auto; }
+
+/* Item */
+.item-type1 {}
+.item-type1 a { display: block;box-shadow: 0 20px 20px 0 rgba(48, 49, 51, 0.04);  border-radius:16px; overflow: hidden; position: relative; }
+.item-type1 a .rank { position: absolute;left: 20px; top:0; }
+.item-type1 a .img { }
+.item-type1 a .info { padding: 15px 20px;  }
+.item-type1 a .info dl { padding-bottom: 15px; }
+.item-type1 a .info dl dt {font-size:12px; font-weight: 700; color: #00c09f; margin-bottom: 4px; }
+.item-type1 a .info dl dd { font-size:16px; line-height: 25px; height: 50px; overflow: hidden; text-overflow: ellipsis;  display: -webkit-box;  -webkit-box-orient: vertical;  -webkit-line-clamp: 2;}
+.item-type1 a .info .tag { padding: 15px 0 10px; border-top:1px solid #f2f2f2; }
+.item-type1 a .info .tag span { font-size:13px; font-weight: 600; color: #000; line-height: 150%;}
+.item-type1 a .price-box { padding:15px 0 10px; border-top:1px solid #f2f2f2; display: flex;justify-content: space-between; align-items: center; }
+.item-type1 a .price-box .grade { font-size:12px; color: #000; font-weight: 600;}
+.item-type1 a .price-box .grade img,
+.item-type1 a .price-box .grade span { vertical-align: middle; }
+.item-type1 a .price-box .price { font-size:13px; color: #000; font-weight: 600; }
+.item-type1 a .price-box .price .dc { color: #00c09f; display: inline; margin-right:6px; }
+
+/* Item List Box */
+.slider-list { display: flex; flex-wrap:wrap; margin:0 0; }
+.slider-list li { flex: 0 1 25%; padding:0 14px 30px; }
+
+
+
+
+
+/*******************************************************************************************************************************************************
+	Main
+********************************************************************************************************************************************************/
+.main-visual { height: 389px; background: #f5f2f2; margin-bottom: 162px; }
+.main-visual  .inner { position: relative;}
+.main-visual .banner1 { background-color:#f5f2f2}
+.main-visual .banner2 { background-color:#eaf4ee}
+.main-visual .banner3 { background-color:#eff4fb}
+.main-visual .banner .in { max-width:1200px; margin:0 auto;padding:100px 0 0 100px; height: 389px; background: url(http://oopblog.com/robot/img/main/visual1.jpg) no-repeat 50% 100%; position: relative; }
+.main-visual .banner.banner1 .in{ background-image: url(http://oopblog.com/robot/img/main/visual1.jpg);}
+.main-visual .banner.banner2 .in{ background-image: url(http://oopblog.com/robot/img/main/visual2.jpg);}
+.main-visual .banner.banner3 .in{ background-image: url(http://oopblog.com/robot/img/main/visual3.jpg);}
+.main-visual .banner .t1 { font-size:30px; color: 000; line-height: 1.5; }
+.main-visual .banner .t3 { font-size:50px; color: #000; line-height: 1.2; }
+.main-visual .banner .t2 { font-size:20px; line-height: 1.5; color: #000; margin:12px 0  }
+.main-visual .banner .btns { position: absolute;left: 100px; bottom:50px; }
+.main-visual .banner .btns a { display: inline-block; vertical-align: middle; height: 59px; border-radius:10px; background: #00c09f;  padding:0 25px 0 25px; font-size:17px; color: #fff; font-weight: 500; line-height: 56px; border: 1px solid #00c09f; transition: all 0.3s ease;}
+.main-visual .banner .btns a:after { content: ''; display: inline-block; vertical-align: middle; background: url(http://oopblog.com/robot/img/main/ico_main_visual_arr.svg) no-repeat 100% 50%; width:34px; height: 34px; margin:-4px 0 0 10px; }
+.main-visual .banner .btns a:hover { opacity:0.7; }
+.main-visual .swiper-button-next, 
+.main-visual .swiper-button-prev { width:52px; height: 52px; border-radius:100%; background: rgba(0,0,0,0.11) url(http://oopblog.com/robot/img/main/ico_main_visual_arr.svg) no-repeat 50% 50%; }
+.main-visual .swiper-button-prev { left: 12%; transform: scaleX(-1);}
+.main-visual .swiper-button-next { right:12%; }
+
+.main-box { padding-left: 260px; position: relative;}
+.main-box .tab-box { position: absolute;left: 0; top:45px; }
+.main-box .tab-box .tit { margin-bottom: 15px; }
+.main-box .tab-box .tab a { display: inline-block; font-size:18px; font-weight: 600; color: #000; opacity:0.2; line-height: 50px; padding-right:30px; position: relative; transition: all 0.3s ease; }
+.main-box .tab-box .tab a:before  { content: ''; position: absolute; right:0; top:50%; transform: translateY(-55%); background:url(http://oopblog.com/robot/img/main/ico_tab_arr.svg) no-repeat 100% 50%; width:30px; height: 30px; transition: all 0.5s ease; opacity:0; }
+.main-box .tab-box .tab a.active { opacity:1; }
+.main-box .tab-box .tab a.active:before { right:-10px; opacity:1; }
+.main-box .swiper-container { padding:0 20px 40px; margin:0 -20px;}
+.main-box .cont { position: relative;}
+.main-box .cont .btn-more { position: absolute; right:0; top:0; font-size:16px; color: #000; font-weight: 700; }
+
+.main1 { margin-bottom: 50px; }
+
+.main2 { padding-left: 260px; margin-bottom: 140px;  }
+.main2 .box { position: relative; margin-bottom: 40px; }
+.main2 .box .h2 { font-size:18px; color: #252525; font-weight: 600; margin-bottom: 20px;}
+.main2 .box .control-common { position: absolute; right:0; top:0; }
+.main2 .box .swiper-slide a { display: block; text-align: center; }
+.main2 .box .swiper-slide a span { font-size:14px; color: #000; }
+.main2 .btns { display: flex; justify-content: space-between; margin:0 -14px; }
+.main2 .btns a { flex:1;  margin:0 14px; text-align: center; font-size:16px; background: #f2f2f2; border-radius:16px; font-weight: 600; transition: all 0.3s ease; }
+.main2 .btns a:hover { background: #00c09f; color: #fff; }
+
+.main3 { margin-bottom: 60px; }
+.main3 .swiper-container { margin:0 -14px; padding: 0;  }
+
+.main4 { padding-left: 260px; margin-bottom: 100px; position: relative; }
+.main4 .h2 { font-size:21px; color: #252525; font-weight: 600; margin-bottom: 20px; }
+.main4 .control-common { position: absolute; right:0; top:0; }
+.main4 .swiper-slide a { display: block; text-align: center; }
+.main4 .swiper-slide a img { width:62px; }
+.main4 .swiper-slide a span { font-size:14px; color: #000; display: block; padding-top:10px; }
+
+.main5 { margin-bottom: 50px; }
+.main5 .cont { padding-top:50px;}
+/* .main5 .cont .btn-more { top:40px; } */
+
+
+.main6 { margin-bottom: 100px; }
+.main6 .swiper-container { padding: 0; margin: 0; }
+
+.main-event { padding:120px 0; background: #fafafa; margin-bottom: 50px;  }
+.main-event .h2 { text-align: center; font-size:36px; font-weight: 700; color: #252525; margin-bottom: 60px; }
+.main-event .swiper-slide {width:auto !important;/* margin-right: 10px; */}
+.main-event .swiper-slide a { position: relative; display: block; }
+.main-event .swiper-slide a dl { position: absolute;left: 40px; top:40px; }
+.main-event .swiper-slide a dl dt { font-size:28px; font-weight: 600; color: #000; margin-bottom: 10px; }
+.main-event .swiper-slide a dl dd { font-size:16px;  color: #000;opacity:0.5; }
+/* .main-event .swiper-slide a:before { content: ''; position: absolute;left: 40px;bottom:40px;background: url(http://oopblog.com/robot/img/common/ico_event_arr.svg) no-repeat 0 0; width:17px; height: 15px; } */
+.main-event .controls { text-align: center; margin-top:100px; }
+.main-event .controls  > div { display: inline-block; vertical-align: middle; height: 24px; }
+.main-event .controls .swiper-button-prev { background: url(http://oopblog.com/robot/img/common/ico_banner_prev.png) no-repeat 50% 50%; width:24px; height: 24px; position: static; margin: 0; }
+.main-event .controls .swiper-button-next { background: url(http://oopblog.com/robot/img/common/ico_banner_prev.png) no-repeat 50% 50%; width:24px; height: 24px; position: static; margin: 0; transform: rotate(180deg);}
+.main-event .controls .num  { font-size:14px; line-height: 24px; font-weight: 600;}
+.main-event .controls .btns button { width:24px; height: 24px; border: 0;   background: url(http://oopblog.com/robot/img/common/ico_banner_pause.png) no-repeat 50% 50%; }
+.main-event .controls .btns .start { background-image: url(http://oopblog.com/robot/img/common/ico_banner_start.png); }
+.main-event .controls .swiper-pagination { width:200px; height: 2px; background: rgba(0,0,0,0.1); position: static; margin: 0 10px;  }
+.main-event .controls .swiper-pagination .swiper-pagination-progressbar-fill { background: #000;  }
+
+.main-review { padding:120px 0; background: #fafafa; margin-bottom: 70px;  }
+.main-review .h2 { text-align: center; font-size:36px; font-weight: 700; color: #252525; margin-bottom: 35px; }
+.main-review .swiper-slide { width:auto !important; }
+.main-review .swiper-slide .item { width:364px; background: #fff; display: flex; align-items: flex-end; padding-top:240px; position: relative;}
+.main-review .swiper-slide .item .msg { position: absolute;left: 44px; right:44px; top:40px; padding:30px 0; text-align: center; font-size:16px; line-height: 25px; color: #000; font-weight: 300;}
+.main-review .swiper-slide .item .msg:before { content: ''; position: absolute;left: 50%; margin-left: -8px; top:0; background: url(http://oopblog.com/robot/img/common/ico_review1.svg) no-repeat 0 0; width:16px; height: 14px; }
+.main-review .swiper-slide .item .msg:after { content: ''; position: absolute;left: 50%; margin-left: -8px; bottom:0; background: url(http://oopblog.com/robot/img/common/ico_review2.svg) no-repeat 0 0; width:16px; height: 14px; }
+.main-review .swiper-slide .item .user { display: flex; align-items: center; flex:1; justify-content: center; }
+.main-review .swiper-slide .item .user img { width:119px; }
+.main-review .swiper-slide .item .user dl { margin-left: 25px; }
+.main-review .swiper-slide .item .user dl dt { font-size:14px; }
+.main-review .swiper-slide .item .user dl dd { font-size:12px; color: #00c09f; font-weight: 600; padding-top:4px; }
+.main-review .controls { text-align: center; margin-top:100px; }
+.main-review .controls  > div { display: inline-block; vertical-align: middle; height: 24px; }
+.main-review .controls .swiper-button-prev { background: url(http://oopblog.com/robot/img/common/ico_banner_prev.png) no-repeat 50% 50%; width:24px; height: 24px; position: static; margin: 0; }
+.main-review .controls .swiper-button-next { background: url(http://oopblog.com/robot/img/common/ico_banner_prev.png) no-repeat 50% 50%; width:24px; height: 24px; position: static; margin: 0; transform: rotate(180deg);}
+.main-review .controls .num  { font-size:14px; line-height: 24px; font-weight: 600;}
+.main-review .controls .btns button { width:24px; height: 24px; border: 0;   background: url(http://oopblog.com/robot/img/common/ico_banner_pause.png) no-repeat 50% 50%; }
+.main-review .controls .btns .start { background-image: url(http://oopblog.com/robot/img/common/ico_banner_start.png); }
+.main-review .controls .swiper-pagination { width:200px; height: 2px; background: rgba(0,0,0,0.1); position: static; margin: 0 10px;  }
+.main-review .controls .swiper-pagination .swiper-pagination-progressbar-fill { background: #000;  }
+
+.project-list ul { display: flex; flex-wrap: wrap; margin:0 -12px;  }
+.project-list ul li { flex: 0 1 33.3333%; padding:0 12px 24px; }
+.project-list ul li a { display: block; padding:20px; background: #fafafa; border-radius:15px;}
+.project-list ul li a .status { font-size:12px; color: #00c09f; font-weight: 700; margin-bottom:8px;  }
+.project-list ul li a .status strong { font-weight: 700; color: #65a5e4; }
+.project-list ul li a h3 { font-size:16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 8px;  font-weight: 400; }
+.project-list ul li a .info { display: flex; align-items: center; }
+.project-list ul li a .info p { margin-right:10px; }
+.project-list ul li a .info p img { vertical-align: middle; margin-right:4px;  }
+.project-list ul li a .info p span { vertical-align: middle; font-size:13px; color: #718096;  }
+.project-list ul li a .tag { padding-top:15px; margin-top:12px; border-top:1px solid #ececec; }
+.project-list ul li a .tag span { font-weight: 600; font-size:13px; color: #000; margin-right:4px; line-height: 150%;}
+
+.story-type1 { }
+.story-type1 a { display: block; }
+.story-type1 a .img {  border-radius:5px; overflow: hidden; }
+.story-type1 a .img img { vertical-align: top; } 
+.story-type1 a dl { margin:10px 0; }
+.story-type1 a dl dt { font-size:16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis ;}
+.story-type1 a dl dd {font-size:12px; font-weight: 600; color: #00c09f; margin-top:6px; }
+.story-type1 a .etc {}
+.story-type1 a .etc span { font-size:12px; color: #718096; }
+.story-type1 a .etc span + span {  position: relative;}
+.story-type1 a .etc span + span:before { content: '∙'; display: inline; margin:0 3px 0 0;  }
+
+.slider-list1 { display: flex; flex-wrap:wrap; margin:0 -12px; }
+.slider-list1 li { flex: 0 1 33.333%; padding:0 12px 30px; width:33.3333%; }
+
+.main-btns { margin-bottom: 70px; }
+.main-btns .inner { display: flex; justify-content: space-between;}
+.main-btns .inner a { width:calc(50% - 19px); padding: 30px 45px 30px 40px; background: #fafafa; border-radius:10px;  }
+.main-btns .inner a dl { display: flex; justify-content: space-between; align-items: center; }
+.main-btns .inner a dl dt { flex:1 0 auto; font-size:18px; color: #000; font-weight: 600; margin-right:28px; }
+.main-btns .inner a dl dd { font-size:14px; color: rgba(0,0,0,0.6); line-height: 20px; }
+
+.bottom-banner { background: url(http://oopblog.com/robot/img/common/img_bottom_banner.png) repeat-x 50% 0; height: 204px; }
+.bottom-banner .inner { padding:102px 0 0 100px; }
+.bottom-banner p { display: flex; align-items: center; }
+.bottom-banner p  span { font-size:22px; font-weight: 600; color: #000; margin-right:50px; }
+.bottom-banner p a { display: inline-block; font-size:16px; color: #fff; font-weight: 600; height: 50px; line-height: 47px; padding:0 30px; border-radius:50px; background: #000; border: 1px solid #000; transition: all 0.5s ease; }
+.bottom-banner p a:hover { color: #000; background: #fff}
+
+#footer { padding:45px 0 55px; }
+#footer .inner { max-width:1200px; padding-left:250px; position: relative; }
+#footer .foot1 { margin-bottom: 60px;}
+#footer .foot1 .logo { position: absolute;left: 0; top:0; }
+#footer .foot1 .logo img {height: 50px;}
+#footer .foot1 .btns { display: inline-block; vertical-align: middle; }
+#footer .foot1 .btns a { font-size:14px; color: #606060; font-weight: 600; margin-right:25px; transition: all 0.3s ease; }
+#footer .foot1 .btns a:hover { color: #000; }
+#footer .foot1 .btns:last-child  { padding-left: 25px; position: relative;}
+#footer .foot1 .btns:last-child:before { content: ''; position: absolute;left: 0; top:3px; width:2px; height: 14px; background:#dedede; }
+#footer .foot1 .btns:last-child a { font-weight: 400; }
+#footer .foot2 .cs { position: absolute;left: 0; top:0;  }
+#footer .foot2 .cs p { font-size:14px; color: #606060; display: inline-block; vertical-align: middle; padding-right:25px; background: url(http://oopblog.com/robot/img/common/ico_foot_cs.svg) no-repeat right 50%; }
+#footer .foot2 .cs strong { display: block; font-size:24px; font-weight: 700; color: #606060; margin:2px 0 4px; }
+#footer .foot2 .cs span { font-size:12px; color: #909090; }
+#footer .foot2 .addr { font-size:12px; line-height: 20px; color: #909090; }
+#footer .foot2 .addr p { display: block;  padding-top:10px; font-family: 'Times';}
+#footer .foot2 .sns { position: absolute; right:15px; bottom:0;}
+#footer .foot2 .sns a { margin-left: 15px; }
+
+.m { display: none; }
+
+
+@media all and (max-width:1570px) {
+	body { overflow-x:hidden;}
+	.main-visual .swiper-button-prev { left:15px; }	
+	.main-visual .swiper-button-next { right:15px; }	
+}
+
+@media all and (max-width:1150px) {
+	.m { display: block; }
+	.pc { display: none; }
+	#header { height: 105px; position: relative; border-bottom: 1px solid #e1e1e1;}
+	#header h1 { height: 37px; top:15px; background-size:auto 37px; width:70px; }
+	#header .search-box { display: none; }
+	#header .right { top:15px; }
+	#header .right > a { display: none; }
+	#header .inner { position: static;}
+	
+	#header nav { margin: 0; position: absolute;left: 0; right:0; bottom:0; display: flex; justify-content: space-between; height: 40px;  }
+	#header nav a { flex:1; font-size:14px; height: 40px; text-align: center; padding: 0; float:none; line-height: 40px; font-weight: 400;}
+	
+	.main-visual { height: auto; margin-bottom: 50px; }
+	.main-visual .banner .in { height: 490px; background-size:contain; padding:40px 30px 0; background-position: right 100%; }
+	.main-visual .banner .t1 { font-size:20px; letter-spacing: -1px; }
+	.main-visual .banner .t2 { font-size:14px; margin:15px 0; }
+	.main-visual .banner .t3 { font-size:30px; }
+	.main-visual .banner .btns { position: static;}
+	.main-visual .banner .btns a { display: block; height: 50px; font-size:15px; line-height: 49px; padding-left: 15px; padding-right:15px; letter-spacing: -1px; }
+	.main-visual .banner .btns a:after { width:24px; }
+	.main-visual .banner.banner1 .in { background-image: url(http://oopblog.com/robot/img/main/visual1_m.jpg); }
+	.main-visual .banner.banner2 .in { background-image: url(http://oopblog.com/robot/img/main/visual2_m.jpg); }
+	.main-visual .banner.banner3 .in { background-image: url(http://oopblog.com/robot/img/main/visual3_m.jpg); }
+	.main-visual .swiper-button-next, .main-visual .swiper-button-prev { display: none; }
+	
+	.main-box { padding: 0; }
+	.main-box .tab-box { position: static; margin-bottom: 50px;}
+	.main-box .tab-box .tit { margin-bottom: 25px; }
+	.main-box .tab-box .tab p { display: inline-block; vertical-align: middle; }
+	.main-box .tab-box .tab a { font-size:16px; margin-right:12px; line-height: 1; padding: 0; }
+	.main-box .tab-box .tab a:before { display: none; }
+	.main-box .cont { position: static;}
+	.main-box .cont .btn-more { font-size:14px; }
+	.main1 { margin-bottom: 20px; }
+	.main1 .swiper-slide { width:220px !important; }
+	.control-common { display: none; }
+	.main2 { padding-left: 0; margin-bottom: 70px; }
+	.main2 .box {margin-bottom: 50px; }
+	.main2 .box .h2 { font-size:16px; }
+	.main2 .box .swiper-container { margin:0 -15px; padding:0 15px;}
+	.main2 .box .swiper-slide  { width:auto !important }
+	.main2 .box .swiper-slide a .ic img { height: 60px; }
+	.main2 .btns { display: block; }
+	.main2 .btns a { display: block; font-size:14px ;margin-bottom: 10px;  }
+	.main3 .main-box .tab-box { margin-bottom: 20px; }
+	.main3 .swiper-container { margin:0 -8px; }
+	.main4 { padding-left: 0; margin-bottom: 60px; }
+	.main4 .h2 { font-size:16px; }
+	.main4 .box .swiper-container { margin:0 -15px; padding:0 15px;}
+	.main4 .box .swiper-slide  { width:auto !important }
+	.main4 .box .swiper-slide a .ic img { height: 60px; }
+	
+	.item-type1 a .info { padding:10px 15px; }
+	.item-type1 a .info dl dt { font-size:10px; }
+	.item-type1 a .info dl dd { font-size:14px; line-height: 20px; height: 40px; }
+	.item-type1 a .price-box { display: block; padding-bottom: 5px; }
+	.item-type1 a .price-box .price { display: flex; flex-direction: row-reverse;  font-size:14px; justify-content: space-between; margin-top:10px; align-items: center; }
+	.item-type1 a .price-box .price .dc { margin-right:0; font-size:12px; }
+	
+	.slider-list li { padding:0 8px 16px; flex: 0 1 50%; }
+	.main-event { padding:80px 0; margin-bottom: 60px;  }
+	.main-event .h2 { font-size:20px; margin-bottom: 30px; }
+	.main-event .swiper-slide { width:320px !important; }
+	.main-event .swiper-slide a dl { left: 25px; top:20px;}
+	.main-event .swiper-slide a dl dt { font-size:16px; }
+	.main-event .swiper-slide a dl dd { font-size:12px; }
+	.main-event .swiper-slide a:before { left: 25px; bottom:25px; }
+	.main-event .controls { margin-top:30px; }
+	.main-event .controls .swiper-pagination { width:144px; }
+	.main-event .controls .swiper-button-next,
+	.main-event .controls .swiper-button-prev { display: none; }
+	.main-box .tab-box { margin-bottom: 25px; }
+	.main5 { margin-bottom: 60px; }
+	.main5 .cont { padding-top:0; }
+	.main5 .cont .btn-more { top:0; }
+	.main6 { margin-bottom: 60px; }
+	.project-list ul { display: block; margin: 0; }
+	.project-list ul li  { padding:0 0 10px;}
+	.project-list ul li a { padding:20px;  }
+	
+	
+	.story-type1 a dl { margin:7px 0 4px; }
+	.story-type1 a dl dt { font-size:16px; }
+	.story-type1 a dl dd { font-size:12px; }
+	
+	.main-review { padding:90px 0;  margin-bottom: 60px; }
+	.main-review .h2 { font-size:20px; }
+	.main-review .swiper-slide .item  { width:320px; }
+	.main-review .controls { margin-top:30px; }
+	.main-review .controls .swiper-pagination { width:144px; }
+	.main-review .controls .swiper-button-next,
+	.main-review .controls .swiper-button-prev { display: none; }
+	
+	.main-btns { margin-bottom: 60px;}
+	.main-btns .inner { display: block; }
+	.main-btns .inner a { display: block; width:auto; padding:27px 23px; margin-bottom: 24px; }
+	.main-btns .inner a dl { display: block; }
+	.main-btns .inner a dl dt { font-size:16px; margin-bottom: 8px; }
+	
+	.bottom-banner { height: auto; padding: 37px 0 125px; background: #28cfb3 url(http://oopblog.com/robot/img/common/img_bottom_banner_m.png) no-repeat 50% 100%; background-size:contain; }
+	.bottom-banner .inner { padding: 0; }
+	.bottom-banner p { display: block; text-align: center; }
+	.bottom-banner p span { display: block; font-size:16px; margin:0 0 15px; }
+	#footer { padding:50px 0 50px; }
+	#footer .inner { position: static; padding: 0 20px; }
+	#footer .foot1 { margin-bottom: 50px; }
+	#footer .foot1 .logo { position: static; margin-bottom: 35px; }
+	#footer .foot1 .logo img { height: 30px; }
+	#footer .foot1 .btns { display: flex;  flex-wrap: wrap;; }
+	#footer .foot1 .btns a { flex: 0 1 33.333%; line-height: 30px;  margin-right: 0; }
+	#footer .foot1 .btns:last-child { padding-left: 0; }
+	#footer .foot1 .btns:last-child  { display: block; }
+	#footer .foot1 .btns:last-child:before { display: none; }
+	#footer .foot1 .btns:last-child a { display: inline-block; vertical-align: middle; margin-right:22px; }
+	#footer .foot2 .cs { position: static; margin-bottom: 30px; }
+	#footer .foot2 .sns { position: static; padding-top:50px;}
+	#footer .foot2 .sns a { margin:0 15px 0 0; }
+}
+
+
+@media all and (max-width:767px) {
+	.slider-list1 { display: block; margin: 0;  }
+	.slider-list1 li { width:auto; padding: 0; margin-bottom: 20px;  }
+}
+
+
+
+::selection {
+    background: #00c09f;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
